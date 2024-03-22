@@ -8,10 +8,10 @@ def response(hey_bob: str) -> str:
 
     hey_bob = hey_bob.strip()
     silence: bool = hey_bob == ""
-
+    
     if silence:
-        return "Fine. Be that way!"
-
+        return "Fine. Be that way!"    
+    
     question: bool = hey_bob[-1] == '?'
     yell: bool = hey_bob.isupper()
 
