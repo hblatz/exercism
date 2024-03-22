@@ -9,4 +9,4 @@ https://exercism.org/
 5. Meltdown Mitigation - conditionals_meltdown.py
 6. Bob, more conditionals - hey_bob.py
 7. Pig Latin - igpay_atinlay3.py
-8. Black Jack - 
+8. Black Jack - comparison_black_jack.py
