@@ -1,6 +1,5 @@
 # def translate(str_phrase: str) -> str:
-""" Pig latin logic
-"""
+""" Pig latin logic in script - not as a function"""
 
 print("enter a phrase:")
 str_phrase = input()
@@ -19,12 +18,12 @@ str_igpay_atinlay: str = ""
 for str_word in str_phrase.split():
     """Initialize for routine variables"""
     str_front_quote: str = ""
-    str_punc: str = ""
     str_back_quote: str = ""
+    str_punc: str = ""
+
 
     """Check for quotation marks, " or'."""
-    bool_front_quote: bool = str_word[0] == '\"' or str_word[0] == "\'"
-    if bool_front_quote:
+    if bool_front_quote: bool = str_word[0] == '\"' or str_word[0] == "\'"
         str_front_quote = str_word[0]  # Saves last character.
         str_word = str_word[1:]  # Shortens word by one character.
 
