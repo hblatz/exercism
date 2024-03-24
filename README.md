@@ -12,3 +12,5 @@ https://exercism.org/
 7. character manipulation - igpay_atinlay3.py
 8. comparisons - comparison_black_jack.py
 9. strings and list - sisters_vocabulary.py
+10. string operations - systers_essay.py
+11. working with lists - card_games.py
