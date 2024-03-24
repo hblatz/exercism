@@ -3,10 +3,12 @@ exercism exercises
 
 https://exercism.org/
 
-2. Guido's Gorgeous Lasagna = lasagna.py
-3. Ghost Gobble Arcade Game - bool_arcade_game.py
-4. Currency Exchange - exchange.py
-5. Meltdown Mitigation - conditionals_meltdown.py
-6. Bob, more conditionals - hey_bob.py
-7. Pig Latin - igpay_atinlay3.py
-8. Black Jack - comparison_black_jack.py
+1. (not shown) hello_world.py
+2. simple math - Lasagna = lasagna.py
+3. boolians - bool_arcade_game.py
+4. int, float and math - exchange.py
+5. conditionals - conditionals_meltdown.py
+6. conditionals - hey_bob.py
+7. character manipulation - igpay_atinlay3.py
+8. comparisons - comparison_black_jack.py
+9. strings and list - sisters_vocabulary.py
