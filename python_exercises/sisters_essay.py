@@ -8,10 +8,10 @@ def capitalize_title(title):
     :return: str - title string in title case (first letters capitalized).
     """
 
-    #title = input('enter a title -->')
-    #man in hat
-    #title = title + "_en"
-    #print(title.title())
+    # title = input('enter a title -->')
+    # man in hat
+    # title = title + "_en"
+    # print(title.title())
     return title.title()
 
 

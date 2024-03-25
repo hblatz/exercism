@@ -11,7 +11,7 @@ def get_rounds(number):
     :return: list - current round and the two that follow.
     """
 
-    return [number, number +1, number +2]
+    return [number, number + 1, number + 2]
 
 
 def concatenate_rounds(rounds_1, rounds_2):
@@ -52,7 +52,7 @@ def card_average(hand):
 
 
 def approx_average_is_average(hand):
-    """Return if an average is using (first + last index values ) 
+    """Return if an average is using (first + last index values )
     OR ('middle' card) == calculated average.
 
     :param hand: list - cards in hand.
@@ -60,18 +60,16 @@ def approx_average_is_average(hand):
     """
 
     # get average from card_average() function for comparisons
-    hand = [1,2,3,4,5] # test
     true_average = card_average(hand)
-    
+
     # find central number(s) as proxy for average
     # calculate first + last / 2 as proxy for average
-    # compare: if F+L/2 = Avg OR Mid = Avg then TRUE 
+    # compare: if F+L/2 = Avg OR Mid = Avg then TRUE
     first_and_last = (hand[0] + hand[-1])/2
-    #print(first_and_last) # test
     middle_card = hand[int(round(len(hand)/2))]
-    #print( middle_card) # test
-    #return true_average == first_and_last or true_average == middle_card
-    return true_average in (first_and_last , middle_card) # more optimal
+    # return true_average == first_and_last or true_average == middle_card
+    return true_average in (first_and_last, middle_card)
+
 
 def average_even_is_average_odd(hand):
     """Return if the (avg of even indexed card values) == (avg of odd indexed cards).
@@ -92,8 +90,6 @@ def maybe_double_last(hand):
     :param hand: list - cards in hand.
     :return: list - hand with Jacks (if present) value doubled.
     """
-
-    hand = [1,2,3,11] # test
 
     if hand[-1] == 11:
         hand = hand[:-1]

@@ -1,4 +1,6 @@
 """ pig latin function """
+
+
 def translate(str_phrase: str) -> str:
     """ Pig latin logic """
 

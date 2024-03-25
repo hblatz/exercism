@@ -1,8 +1,10 @@
-"""Functions for calculating steps in exchaning currency.
+"""Functions for calculating steps in exchanging currency.
 
-Python numbers documentation: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+Python numbers documentation:
+https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 
-Overview of exchanging currency when travelling: https://www.compareremit.com/money-transfer-tips/guide-to-exchanging-currency-for-overseas-travel/
+Overview of exchanging currency when travelling:
+https://www.compareremit.com/money-transfer-tips/guide-to-exchanging-currency-for-overseas-travel/
 """
 
 
@@ -69,6 +71,6 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
 
     spread = spread / 100
     exchange_rate = exchange_rate * (1 + spread)
-    exch_bf_bills = budget / exchange_rate
-    bills = (exch_bf_bills / denomination) // 1
+    exch_of_bills = budget / exchange_rate
+    bills = (exch_of_bills / denomination) // 1
     return bills * denomination

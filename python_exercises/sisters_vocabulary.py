@@ -8,9 +8,9 @@ def add_prefix_un(word: str):
     :return: str - of root word prepended with 'un'.
     """
 
-    #print("enter an un- word")
-    #word = input()
-    #print('un' + word)
+    # print("enter an un- word")
+    # word = input()
+    # print('un' + word)
     return "un" + word
 
 
@@ -30,15 +30,15 @@ def make_word_groups(vocab_words):
     produces the following string: 'en :: enclose :: enjoy :: enlighten'.
     """
 
-    #print("enter a list ['prefix', 'word1', 'word2']")
-    #vocab_words = input()
+    # print("enter a list ['prefix', 'word1', 'word2']")
+    # vocab_words = input()
 
     vocab_list: list = vocab_words[1:]
     prefix: str = vocab_words[0]
 
     glue: str = " :: " + prefix
     prefices: str = prefix + glue.join(vocab_list)
-    #print(prefices)
+    # print(prefices)
 
     return prefix + " :: " + prefices
 
@@ -52,17 +52,17 @@ def remove_suffix_ness(word):
     For example: "heaviness" becomes "heavy", but "sadness" becomes "sad".
     """
 
-    #print("enter a word ending in -ness")
-    #word = input()
+    # print("enter a word ending in -ness")
+    # word = input()
 
-    if word[-5: ] == "iness":
+    if word[-5:] == "iness":
         word = word[:len(word) - 5] + "y"
     elif word[-4:] == "ness":
         word = word[:len(word) - 4]
     else:
         word = "your word is not an -ness word."
 
-    #print(word)
+    # print(word)
     return word
 
 
@@ -77,19 +77,19 @@ def adjective_to_verb(sentence, index):
     """
 
     last = sentence[-1]
-    punc_bool = any([last == ".", last =="!", last == "?"])
+    punc_bool = any([last == ".", last == "!", last == "?"])
     if punc_bool:
         sentence = sentence[:-1]
-    #print("enter an sentence in quotes, a comma, and a number for where the adjective is.")
-    #adj_to_verb_tuple = input()
-    #adj_to_verb_tuple_list = adj_to_verb_tuple.split(", ")
-    #sentence = adj_to_verb_tuple_list[0]
-    #print(sentence)
+    # print("enter a sentence in quotes, a comma, and a number for where the adjective is.")
+    # adj_to_verb_tuple = input()
+    # adj_to_verb_tuple_list = adj_to_verb_tuple.split(", ")
+    # sentence = adj_to_verb_tuple_list[0]
+    # print(sentence)
     sentence_list = sentence.split()
-    #print(sentence_list)
-    #index = int(adj_to_verb_tuple_list[1])
-    #print(index)
+    # print(sentence_list)
+    # index = int(adj_to_verb_tuple_list[1])
+    # print(index)
     adjective = sentence_list[index]
-    #print(adjective)
+    # print(adjective)
     verb = adjective + "en"
     return verb

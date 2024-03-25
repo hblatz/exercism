@@ -16,8 +16,7 @@ def value_of_card(card):
     3.  '2' - '10' = numerical value.
     """
 
-
-    face = [card == 'J', card == 'Q', card =='K']
+    face = [card == 'J', card == 'Q', card == 'K']
     if any(face):
         return 10
     if card == 'A':
@@ -59,11 +58,10 @@ def value_of_ace(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-
-    vcard1: int = value_of_card(card_one) 
+    vcard1: int = value_of_card(card_one)
     vcard2: int = value_of_card(card_two)
     vhand: int = vcard1 + vcard2
-    
+
     if 4 <= vhand <= 10:
         return 11
 
@@ -101,7 +99,7 @@ def can_split_pairs(card_one, card_two):
 
     if value_card_1 == value_card_2:
         return True
- 
+
     return False
 
 
@@ -114,7 +112,7 @@ def can_double_down(card_one, card_two):
 
     value_card_1: int = value_of_card(card_one)
     value_card_2: int = value_of_card(card_two)
-    vhand: int = value_card_1 + value_card_2 
+    vhand: int = value_card_1 + value_card_2
 
     if 9 <= vhand <= 11:
         return True
