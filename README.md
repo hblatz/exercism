@@ -15,3 +15,4 @@ https://exercism.org/
 10. string operations - systers_essay.py
 11. working with lists - card_games.py
 12. more working with lists - Chaitana's Colossal Coaster - list_methods.py
+13. for loops - Making the Grade - loops.py
