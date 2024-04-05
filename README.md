@@ -18,3 +18,5 @@ https://exercism.org/
 13. for loops - Making the Grade - loops.py
 14. list_comprehensions.py
 15. tuples.py
+16. dictionary.py
+17. dictionary methods dict_methods.py
