@@ -81,8 +81,8 @@ def update_recipes(ideas, recipe_updates):
 4 test outputs: [{'Apple': 2, 'Banana': 4, 'Orange': 1, 'Pear': 12},
 {'Apple': 3, 'Avocado': 2, 'Banana': 1, 'Orange': 5},
 {'Apple': 1, 'Banana': 2, 'Orange': 3},
-{'Apple' : 2, 'Blueberries': 5, 'Broccoli': 2, 'Kiwi': 1, 'Melon': 4, 'Raspberry': 2}] # test set 1 - 4 """
-# cart = {'Banana': 4, 'Apple': 2, 'Orange': 1, 'Pear': 12}  # test 1
+{'Apple' : 2, 'Blueberries': 5, 'Broccoli': 2, 'Kiwi': 1, 'Melon': 4, 'Raspberry': 2}] # test set 1 - 4
+# cart = {'Banana': 4, 'Apple': 2, 'Orange': 1, 'Pear': 12}  # test 1 """
 def sort_entries(cart):
     return dict(sorted(cart.items()))
 
@@ -118,36 +118,60 @@ def send_to_store(cart, aisle_mapping):
     return rev_sort_cart
 
 
-fulfillment_cart = {'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 
+# 6
+"""fulfillment_cart = {'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 
                      'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]}
 store_inventory = {'Banana': [15, 'Aisle 5', False], 'Apple': [12, 'Aisle 4', False], 
                    'Orange': [1, 'Aisle 4', False], 'Milk': [4, 'Aisle 2', True]}
-# result >>> {'Banana': [12, 'Aisle 5', False], 'Apple': [10, 'Aisle 4', False], 
+# result >>>  {'Banana': [12, 'Aisle 5', False], 'Apple': [10, 'Aisle 4', False], 
+#           'Orange': ['Out of Stock', 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True]}
+# Aactual >>> {'Banana': [12, 'Aisle 5', False], 'Apple': [10, 'Aisle 4', False], 
 #           'Orange': ['Out of Stock', 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True]}  # test """
-def update_store_inventory(fulfillment_cart, store_inventory):
+"""fulfillment_cart = {'Kiwi': [3, 'Aisle 6', False]}
+store_inventory = {'Kiwi': [3, 'Aisle 6', False], 'Juice': [5, 'Aisle 5', False],
+                  'Yoghurt': [2, 'Aisle 2', True], 'Milk': [5, 'Aisle 2', True]}
+# expected >>> {'Juice': [5, 'Aisle 5', False], 'Yoghurt': [2, 'Aisle 2', True],
+#               'Milk': [5, 'Aisle 2', True], 'Kiwi': ["Out of Stock", 'Aisle 6', False]}
+# actual >>>   {'Juice': [5, 'Aisle 5', False], 'Yoghurt': [2, 'Aisle 2', True], 
+#               'Milk': [5, 'Aisle 2', True], 'Kiwi': ['Out of Stock', 'Aisle 6', False]}  # """
+"""fulfillment_cart = {'Kiwi': [1, 'Aisle 6', False], 'Melon': [4, 'Aisle 6', False], 'Apple': [2, 'Aisle 1', False],
+                  'Raspberry': [2, 'Aisle 6', False], 'Blueberries': [5, 'Aisle 6', False],
+                  'Broccoli': [1, 'Aisle 3', False]}
+store_inventory = {'Apple': [2, 'Aisle 1', False], 'Raspberry': [5, 'Aisle 6', False],
+                  'Blueberries': [10, 'Aisle 6', False], 'Broccoli': [4, 'Aisle 3', False],
+                  'Kiwi': [1, 'Aisle 6', False], 'Melon': [8, 'Aisle 6', False]}
+# result >>> {'Kiwi': ['Out of Stock', 'Aisle 6', False], 'Melon': [4, 'Aisle 6', False],
+#                'Apple': ['Out of Stock', 'Aisle 1', False], 'Raspberry': [3, 'Aisle 6', False],
+#                'Blueberries': [5, 'Aisle 6', False], 'Broccoli': [3, 'Aisle 3', False]}  # """
+def update_store_inventory(fulfillment_cart, store_inventory): 
     """Update store inventory levels with user order.
 
     :param fulfillment cart: dict - fulfillment cart to send to store.
     :param store_inventory: dict - store available inventory
     :return: dict - store_inventory updated.
-    
-    For each food item in fullfill_cart, 
-        remember the amount to_buy, then 
-            find the store_inventory food item and 
-                subract the cart from inventory, with floor at zero. """ 
+    """ 
 
     new_inv = {}
-    for food, food_props in fulfillment_cart.items():
-        net_inventory = store_inventory[food][0] - food_props[0]
-        print(food, ": fullfill: ", food_props[0], ", inventory: ", store_inventory[food][0], ", net: ", net_inventory)
-        food_props_update = [net_inventory] + store_inventory[food][:3]
-        
-        if net_inventory <= 0:
+
+    for food, food_props in store_inventory.items(): 
+        # if store_inventory[food] is not found in fulfillment_cart then
+        # copy them out and start the new dictionary with them.
+        if not food in fulfillment_cart:
+            new_inv.update({food: food_props})
+
+    for food, food_props in store_inventory.items(): 
+        # if store_inventory[food] is not found in fulfillment_cart then
+        # skip it 
+        if not food in fulfillment_cart:
             continue
-            food_props_update = ['Out of Stock']
-        
-        print(food_props_update)
-        new_inv.update({food: food_props_update})
-        # store_inventory.update({tuple(food), (food_props_update)})"""
-    
-    return store_inventory
+        else:
+            net_inventory = food_props[0] - fulfillment_cart[food][0]
+
+            if net_inventory <= 0:
+                # continue
+                net_inventory = 'Out of Stock'
+
+            food_props_update = [net_inventory] + store_inventory[food][1:3]
+            new_inv.update({food: food_props_update})  # """
+
+    return new_inv
