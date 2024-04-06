@@ -25,6 +25,13 @@ def add_item(current_cart, items_to_add):
     return current_cart
 
 
+def add_item_2(current_cart, items_to_add):
+
+    for item in items_to_add:
+        current_cart[item]=current_cart.setdefault(item,0)+1
+    return current_cart
+
+
 # 2
 """notes = ('Banana','Apple', 'Orange')  # test 1  # test 1
 # results >>> {'Banana': 1, 'Apple': 1, 'Orange': 1}  # test 1 """
@@ -118,6 +125,16 @@ def send_to_store(cart, aisle_mapping):
     return rev_sort_cart
 
 
+def send_to_store_2(cart, isle_mapping):
+    fulfillment_dict={}
+    for item in cart.keys():
+        isle_mapping[item].insert(0,cart[item])
+        fulfillment_dict[item]=isle_mapping[item]
+    new_dict={}
+    new_dict |= reversed(sorted(fulfillment_dict.items()))
+    return new_dict
+
+
 # 6
 """fulfillment_cart = {'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 
                      'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]}
@@ -175,3 +192,11 @@ def update_store_inventory(fulfillment_cart, store_inventory):
             new_inv.update({food: food_props_update})  # """
 
     return new_inv
+
+
+def update_store_inventory_2(fulfillment_cart, store_inventory):
+    for key in fulfillment_cart.keys():
+        store_inventory[key][0] -= fulfillment_cart[key][0]
+        if store_inventory[key][0]<=0:
+            store_inventory[key][0]="Out of Stock"
+    return store_inventory
