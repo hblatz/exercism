@@ -60,6 +60,10 @@ def add_missing_stops_2(route, **kwargs):
     return {**route, "stops" : list(kwargs.values())}
 
 
+def add_missing_stops_3(route: dict, **stops) ->dict:
+    return route | {'stops': list(stops.values())}
+
+
 """route = {'from': 'Berlin', 'to': 'Hamburg'}
 more_route_information = {'timeOfArrival': '12:00', 'precipitation': '10', 'temperature': '5', 'caboose': 'yes'}
 # expected: {'from': 'Berlin', 'to': 'Hamburg', 'timeOfArrival': '12:00', 'precipitation': '10', 'temperature': '5', 'caboose': 'yes'}
@@ -78,6 +82,10 @@ def extend_route_information(route, more_route_information):
 
 def extend_route_information_2(route, more_route_information):
     return {**route, **more_route_information}
+
+
+def extend_route_information_3(route: dict, more_route_information: dict) -> dict:
+    return route | more_route_information
 
 
 """wagon_rows = [[(2, 'red'), (4, 'red'), (8, 'red')], 
@@ -101,5 +109,9 @@ def fix_wagon_depot(wagon_rows):
     return wagon_columns
 
 
-def fix_wagon_depot(wagons_rows):
+def fix_wagon_depot_2(wagons_rows):
     return list(map(list, zip(*wagons_rows)))  # Note, we haven't covered MAP as yet. 
+
+def fix_wagon_depot_3(wagons_rows):
+    [*first_row], [*second_row], [*third_row] = zip(*wagons_rows)
+    return [first_row, second_row, third_row]
