@@ -33,7 +33,7 @@ Harbor Managers Office, ("8", "A"), Purple
 Foggy Seacave, ("8", "C"), Purple
 """
 
-# record = ["Amethyst Octopus", "1F"]  # test
+"""record = ["Amethyst Octopus", "1F"]  # test """
 def get_coordinate(record):
     """Return coordinate value from a tuple containing the treasure name, and treasure coordinate.
 
@@ -56,8 +56,8 @@ def convert_coordinate(coordinate):
     # list(reversed(list(x))) is not obvious to me. I guess the 'reversed()' does not return a list from a list.
 
 
-    # azara_record = ('Brass Spyglass', '1C')  # test
-    # rui_record = ('Seaside Cottages', ('1', 'C'), 'blue')  # test
+    """# azara_record = ('Brass Spyglass', '1C')  # test
+    # rui_record = ('Seaside Cottages', ('1', 'C'), 'blue')  # test """
 def compare_records(azara_record, rui_record):
     """Compare two record types and determine if their coordinates match.
 
