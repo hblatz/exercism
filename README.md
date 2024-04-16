@@ -1,23 +1,19 @@
-# exercism
-exercism exercises
+# Exercism Command-line Interface (CLI)
 
-https://exercism.org/
+[![CI](https://github.com/exercism/cli/actions/workflows/ci.yml/badge.svg)](https://github.com/exercism/cli/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/exercism/cli)](https://goreportcard.com/report/github.com/exercism/cli)
 
-1. (not shown) hello_world.py
-2. simple math - Lasagna = lasagna.py
-3. boolians - bool_arcade_game.py
-4. int, float and math - exchange.py
-5. conditionals - conditionals_meltdown.py
-6. conditionals - hey_bob.py
-7. character manipulation - igpay_atinlay.py
-8. comparisons - comparison_black_jack.py
-9. strings and list - sisters_vocabulary.py
-10. string operations - systers_essay.py
-11. working with lists - card_games.py
-12. more working with lists - Chaitana's Colossal Coaster - list_methods.py
-13. for loops - Making the Grade - loops.py
-14. list_comprehensions.py
-15. tuples.py
-16. dictionary.py
-17. dictionary methods dict_methods.py
-18. packing and unpacking, args and kwargs - locomotive_engineer.py
+The CLI is the link between the [Exercism][exercism] website and your local work environment. It lets you download exercises and submit your solution to the site.
+
+This CLI ships as a binary with no additional runtime requirements.
+
+## Installing the CLI
+
+Instructions can be found at [exercism/cli/releases](https://github.com/exercism/cli/releases)
+
+## Contributing
+
+If you wish to help improve the CLI, please see the [Contributing guide][contributing].
+
+[exercism]: http://exercism.io
+[contributing]: /CONTRIBUTING.md
