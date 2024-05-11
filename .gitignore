@@ -1,11 +1,10 @@
 # Created by pytest automatically.
-*.log
-temp/
+**/temp
 **/.pytest_cache
 **/v
 **/.vscode
-**/.venv/
-**/.idea/
+**/.venv
+**/.idea
 LICENCE
 exercism
 *.exe
