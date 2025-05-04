@@ -1,0 +1,13 @@
+# Created by pytest automatically.
+**/temp
+**/.pytest_cache
+**/.exercism
+**/v
+**/.vscode
+**/.venv
+**/.idea
+exercism
+LICENSE
+*.exe
+*.ini
+*.log

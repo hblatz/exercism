@@ -8,6 +8,7 @@ temp/
 **/.vscode
 **/.venv/
 **/.idea/
+exercism
 LICENCE
 *.exe
 *.ini
