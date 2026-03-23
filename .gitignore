@@ -10,3 +10,135 @@ exercism
 *.exe
 *.ini
 *.log
+
+# 1. Dependencies - never commit libraries
+node_modules/
+vendor/
+.venv/
+jspm_packages/
+__pycache__/
+.pyfin_venv/ 
+
+# 2. Build Output - never commit built code
+dist/
+build/
+out/
+.next/
+/build/
+/dist/
+/target/
+*.class
+*.pyc
+*.exe
+*.bin
+*.dll
+ 
+# 3. Environment Variables - SECRET! Never commit API keys
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+ 
+# 3.1 Exception: track specific JSON files
+!launch.json
+!package.json
+!.vscode/launch.json
+tasks.json
+app.json
+config.json
+default.json
+appsettings.json
+ 
+# 4. Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+logs/
+*.log
+crash.log
+ 
+# 5. OS Generated system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# 6. IDE/Editor Specific Files
+# VS Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# 7. Coverage reports and Testing
+coverage/
+.nyc_output/
+*.test.js.snap
+
+# 8. Temporary files and folders
+tmp/
+.cache/
+*.tmp
+
+# 9. Binary application, media, and data files, including database files, Jupyter Notebooks, and raw data files.
+*.xlsx
+*.docx
+*.pdf
+*.pynb
+# Jupyter Notebook files - often contain outputs and can be large
+
+# Data files
+data/
+# Docker-related data directory (temporary files)
+/raw_data/
+*.db-journal
+*.db
+*.fea
+*.feather
+*.pkl
+*.pickle
+*.sqlite
+*.sqlite3
+*.parquet
+*.hdf5
+*.h5
+*.csv
+# csv files can be large and often contain raw data that shouldn't be committed. Consider tracking specific CSV files if needed.
+# "!data/processed/*.csv # Example of tracking specific CSV files in a processed data folder"
+
+# Media files
+media/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.tiff
+*.bmp
+*.avi
+*.mp4
+*.mpg
+*.mov
+*.mp3
+*.wav
+*.gif
+
+# Archives and compressed files
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# 10. Sensitive data and environment variables
+.env
+config.secret.json
